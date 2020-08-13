@@ -6,6 +6,7 @@ export const endpoints = {
   FORGOTPASSWORD: '/auth/forgotpassword',
   CHANGEPASSWORD: '/auth/changepassword',
   LOGOUT: '/auth/logout',
+  CRAWL: '/website/crawl',
 };
 
 // !do not edit starting from here!

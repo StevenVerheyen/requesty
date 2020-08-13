@@ -6,3 +6,5 @@ export {
   postLogout,
   putChangePassword,
 } from './endpoints/auth';
+
+export { postCrawl } from './endpoints/crawl';
