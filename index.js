@@ -7,4 +7,4 @@ export {
   putChangePassword,
 } from './endpoints/auth';
 
-export { postCrawl } from './endpoints/crawl';
+export { postCrawl, getDownloadPdf } from './endpoints/crawl';

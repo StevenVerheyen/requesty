@@ -7,28 +7,24 @@ export const endpoints = {
   CHANGEPASSWORD: '/auth/changepassword',
   LOGOUT: '/auth/logout',
   CRAWL: '/website/crawl',
+  DOWNLOAD: '/website/crawl/download',
 };
 
 // !do not edit starting from here!
 
-const cookieType = 'include'; // todo: change to `same-origin` before final deployment
 const getRequestOptions = {
   method: 'GET',
-  credentials: cookieType, // this makes it possible to send stored cookies with requests
 };
 const deleteRequestOptions = {
   method: 'DELETE',
-  credentials: cookieType,
 };
 const putRequestOptions = {
   method: 'PUT',
   headers: {},
-  credentials: cookieType,
 };
 const postRequestOptions = {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
-  credentials: cookieType,
 };
 
 // ?=============?
@@ -42,6 +38,15 @@ const postRequestOptions = {
 export async function getRequest(endpoint) {
   const res = await fetch(`${api}${endpoint}`, getRequestOptions);
   return await res.json();
+}
+
+/**
+ * Fetch a filea and returns it as a blob object
+ * @param {string} endpoint Endpoint where data will be fetched from
+ */
+export async function getRequestDownload(endpoint) {
+  const res = await fetch(`${api}${endpoint}`, getRequestOptions);
+  return await res.blob();
 }
 
 /**

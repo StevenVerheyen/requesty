@@ -1,4 +1,4 @@
-import { endpoints, postRequest } from '../helpers';
+import { endpoints, postRequest, getRequestDownload } from '../helpers';
 
 // !=========!
 //   !CRAWL!
@@ -10,4 +10,12 @@ import { endpoints, postRequest } from '../helpers';
  */
 export async function postCrawl(body) {
   return await postRequest(endpoints.CRAWL, body);
+}
+
+/**
+ * Get download PDF file
+ * @param {string} fileName - Filename of the PDF on the server
+ */
+export async function getDownloadPdf(fileName) {
+  return await getRequestDownload(`${endpoints.DOWNLOAD}/${fileName}`);
 }
